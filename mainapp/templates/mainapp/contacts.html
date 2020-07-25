@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <link rel="stylesheet" type="text/css" href = "/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="/static/img/logo.png">
+            </div>
+            <ul class="menu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/catalog/">Каталог</a></li>
+                <li><a href="/gallery/">Галерея</a></li>
+                <li><a href="/cart/">Корзина</a></li>
+                <li><a href="/contacts/">Контакты</a></li>
+            </ul>
+        </div>
+
+        <hr>
+        <h1>Напишите нам</h1>
+
+        <form action="#">
+            <fieldset>
+                <legend>Сообщение</legend>
+                <label>Ваше имя:<input type="text" size="30" placeholder="Ваше Имя"></label><br>
+                <label>Ваш Email:<input type="email" placeholder="example@mail.ru"></label><br>
+                <label>Ваш телефон:<input type="tel"></label><br>
+                <label>Тема сообщения:<input type="text" size="50"></label><br>
+                <label>Текст сообщения:<br>
+                    <textarea rows="10" cols="45" name="message"></textarea>
+                </label><br>
+                <input type="submit" value="Отправить сообщение">
+                <input type="reset" value="Отмена"><br>
+            </fieldset>
+        </form>
+
+        <h2>Адрес</h2>
+        <p>Контактный номер телефона интернет-магазина: <strong>+7-777-888-9944</strong></p>
+        <p>Наш адрес: <strong>Маунтин-Вью, Калифорния, США</strong></p>
+        <p>Наш email: <strong>besttables@examlple.com</strong></p>
+
+        <!-- карту взял гугловую -->
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50704.098126372766!2d-122.11628637317403!3d37.413329935554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7495bec0189%3A0x7c17d44a466baf9b!2z0JzQsNGD0L3RgtC40L0t0JLRjNGOLCDQmtCw0LvQuNGE0L7RgNC90LjRjywg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1590835347409!5m2!1sru!2sru"
+            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+        </iframe>
+
+        <div class="footer">
+            <hr>
+            <p> Все права защищены &copy;&nbsp;2020 </p>
+        </div>
+    </div>
+</body>
+</html>

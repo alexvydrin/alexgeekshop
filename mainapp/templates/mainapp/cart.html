@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link rel="stylesheet" type="text/css" href = "/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="/static/img/logo.png">
+            </div>
+            <ul class="menu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/catalog/">Каталог</a></li>
+                <li><a href="/gallery/">Галерея</a></li>
+                <li><a href="/cart/">Корзина</a></li>
+                <li><a href="/contacts/">Контакты</a></li>
+            </ul>
+        </div>
+
+        <hr>
+        <h1>Корзина</h1>
+        <hr>
+
+        <div id="goods"></div>
+
+        <hr>
+
+        <div id="cart">Корзина пока пуста</div>
+            
+        <div>
+            Общая сумма заказа = <span id="result">0</span>
+        </div>
+
+        <div class="footer">
+            <hr>
+            <p> Все права защищены &copy;&nbsp;2020 </p>
+        </div>
+
+    </div>
+
+    <script>
+        var cart = [];
+
+        var goods = [
+        {
+            id: "table_orion",
+            name: "Стол письменный Орион",
+            price: 1000,
+        },
+        {
+            id: "table_orion_2",
+            name: "Стол письменный Орион-2",
+            price: 2000,            
+        },
+        {
+            id: "table_3",
+            name:"Стол письменный с ящиками №3",
+            price:3000,
+        }]
+
+        function init (){
+            var appDiv = document.getElementById("goods");
+            var divDomElement, imgDomElement, text_name, text_price, br, btnDomElement;
+            for(var good of goods){
+                divDomElement = document.createElement("div");
+                divDomElement.className="catalog_item";
+                // Изображение товара
+                imgDomElement = document.createElement("img");
+                imgDomElement.src = "/static/img/gallery/small/"+good.id+"_small.jpg";
+                imgDomElement.alt = good.name;
+                imgDomElement.style.width="50%";
+                divDomElement.appendChild(imgDomElement);
+                // Название товара
+                br = document.createElement("br");
+                divDomElement.appendChild(br);
+                text_name = document.createTextNode(good.name);
+                divDomElement.appendChild(text_name);
+                // Цена товара
+                br = document.createElement("br");
+                divDomElement.appendChild(br);
+                text_price = document.createTextNode("Цена = "+good.price);
+                divDomElement.appendChild(text_price);
+                // Кнопка купить
+                br = document.createElement("br");
+                divDomElement.appendChild(br);
+                btnDomElement = document.createElement('input');
+                btnDomElement.id = good.id;
+                btnDomElement.type = 'button';
+                btnDomElement.value = 'Купить';
+                btnDomElement.style.width="50%";
+                btnDomElement.onclick = addItem;
+                divDomElement.appendChild(btnDomElement);
+                
+                appDiv.appendChild(divDomElement);
+            }
+        }
+
+        function addItem(){
+
+            var table_cart;
+            var td_style = "border: 1px solid black; font-size: 150%; padding: 1px 10px"
+            if (cart.length){ // Если таблица уже есть, то ищем её
+                table_cart = document.querySelector('table');
+            } else { // Иначе создаем новую
+                table_cart = document.createElement('table');
+                table_cart.style = "border-collapse: collapse;";
+                var appDiv = document.getElementById("cart");
+                appDiv.innerHTML = "";
+                appDiv.append(table_cart);
+                var row = document.createElement('tr');
+                table_cart.append(row);
+                var td = document.createElement('th');
+                td.style = td_style;
+                td.innerHTML = "Товар";
+                row.append(td);
+                var td = document.createElement('th');
+                td.style = td_style;
+                td.innerHTML = "Кол-во";
+                row.append(td);
+                var td = document.createElement('th');
+                td.style = td_style;
+                td.innerHTML = "Цена";
+                row.append(td);
+               var td = document.createElement('th');
+                td.style = td_style;
+                td.innerHTML = "Сумма";
+                row.append(td);
+            }
+
+            // Находим информацию о товаре по его id
+            for (var good of goods){
+                if (good.id == this.id) {
+                    var product_name = good.name;
+                    var product_price = good.price;
+                }
+            }
+
+            // Сначала изменим массив товаров в корзине
+            var new_item = false;
+            for (var item of cart){
+                if (item.id == this.id){
+                    new_item = item;
+                    new_item.count += 1;
+                    break;
+                }
+            }
+            if (new_item == false){
+                new_item = {};
+                new_item.id = this.id;
+                new_item.name = product_name;
+                new_item.price = product_price;
+                new_item.count = 1;
+                cart.push(new_item);
+            }
+           
+            // Затем отрисовка таблицы по данным из массива товаров в корзине
+            if (new_item.count == 1){ // Только что добавили новый товар в корзину
+                var row = document.createElement('tr');
+                table_cart.append(row);
+                            
+                var td = document.createElement('td');
+                td.style = td_style;
+                td.innerHTML = new_item.name;
+                row.append(td);
+
+                td = document.createElement('td');                
+                td.id = new_item.id + "count";
+                td.style = td_style;
+                td.innerHTML = new_item.count;
+                row.append(td);
+
+                td = document.createElement('td');                
+                td.style = td_style;
+                td.innerHTML = new_item.price;
+                row.append(td);
+
+                td = document.createElement('td');                
+                td.id = new_item.id + "sum";
+                td.style = td_style;
+                td.innerHTML = product_price * new_item.count;
+                row.append(td);
+            } else { // Изменяем уже имеющийся товар
+
+                //alert("изменим "+new_item.id + "count");
+
+                var elementCount = document.getElementById(new_item.id + "count");
+                elementCount.innerHTML = new_item.count;
+                var elementSum = document.getElementById(new_item.id + "sum");
+                elementSum.innerHTML = product_price * new_item.count;
+            }
+
+            var elementResult = document.getElementById("result");
+            elementResult.innerHTML = countBasketPrice(cart);
+        }
+
+        function countBasketPrice(mas){         
+            var result = 0;
+            for(var item of mas){
+                result += item.count * item.price;
+            }
+            return result;
+        }
+
+        window.onload = init;
+
+    </script>
+
+</body>
+</html>

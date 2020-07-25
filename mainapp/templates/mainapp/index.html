@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" type="text/css" href = "/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="/static/img/logo.png">
+            </div>
+            <ul class="menu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/catalog/">Каталог</a></li>
+                <li><a href="/gallery/">Галерея</a></li>
+                <li><a href="/cart/">Корзина</a></li>
+                <li><a href="/contacts/">Контакты</a></li>
+            </ul>
+        </div>
+
+        <hr>
+        <h1>Офисные столы Комфорт</h1>
+        <p>Выбери комфортный офисный стол!<br>Отличный офисный стол - отличная произодительность труда!</p>
+
+        <div style="float:left;" id="left"><img src="/static/img/left.png"></div>
+        <div style="float:left;width:40%" id="slider"></div>
+        <div style="float:left;" id="right"><img src="/static/img/right.png"></div>
+        <div style="clear:both;"></div>
+
+        <div class="footer">
+            <hr>
+            <p> Все права защищены &copy;&nbsp;2020 </p>
+        </div>
+
+    </div>
+
+    <script>
+
+        var goods = [
+        {
+            id: "table_orion",
+            name: "Стол письменный Орион",            
+        },
+        {
+            id: "table_orion_2",
+            name: "Стол письменный Орион-2",            
+        },
+        {
+            id: "table_3",
+            name:"Стол письменный с ящиками №3",            
+        }]
+
+        var i_good = 0;
+
+        function showPicture(){
+            var appDiv = document.getElementById("slider");
+            appDiv.innerHTML = "";
+            // Картинка
+            var src = "/static/img/gallery/big/" + goods[i_good].id + "_big.jpg";
+            var imageDomElement = document.createElement("img");
+            imageDomElement.style.width = "100%";
+            imageDomElement.src = src;
+            appDiv.appendChild(imageDomElement);
+            // Название товара
+            br = document.createElement("br");
+            appDiv.appendChild(br);
+            text_name = document.createTextNode(goods[i_good].name);
+            appDiv.appendChild(text_name);            
+        }
+        
+        function clickLeft(){
+            if (i_good==0){
+                i_good = goods.length-1;                
+            }else{
+                i_good -= 1;
+            }
+            showPicture();
+        }
+
+        function clickRight(){
+            if (i_good==goods.length-1){
+                i_good = 0;
+            }else{
+                i_good += 1;
+            }
+            showPicture();
+        }
+
+        function init(){
+            var left = document.getElementById("left");
+            left.onclick = clickLeft;            
+            var right = document.getElementById("right");
+            right.onclick = clickRight;
+            showPicture();
+        }
+
+        window.onload = init;
+
+    </script>
+
+</body>
+</html>
