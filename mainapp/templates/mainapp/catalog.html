@@ -1,54 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Каталог товаров</title>
-    <link rel="stylesheet" type="text/css" href = "/static/css/style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <img src="/static/img/logo.png">
-            </div>
-            <ul class="menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="/catalog/">Каталог</a></li>
-                <li><a href="/gallery/">Галерея</a></li>
-                <li><a href="/cart/">Корзина</a></li>
-                <li><a href="/contacts/">Контакты</a></li>
-            </ul>
-        </div>
+{% extends 'mainapp/base.html' %}
+{% load static %}
 
-        <hr>
-        <h1>Каталог</h1>
-        <hr>
+{% block menu %}
+    {% include 'mainapp/include/inc_main_menu.html' %}
+{% endblock %}
 
+{% block content %}
+    <hr>
+    <h1>Каталог</h1>
+    <hr>
+
+    {% for good in goods %}
         <div class="catalog_item">
             <a href="#">
-                <img src="/static/img/gallery/small/table_orion_small.jpg" alt="Стол письменный Орион" width="15%">
+                <img src="{% static 'img/gallery/small/' %}{{good.code}}_small.jpg" alt="{{good.name}}" width="15%">
             </a><br>
-            <a href="#">Стол письменный Орион</a><br>
+            <a href="#">{{good.name}}</a><br>
         </div>
+    {% endfor %}
 
-        <div class="catalog_item">
-            <a href="#">
-                <img src="/static/img/gallery/small/table_orion_2_small.jpg" alt="Стол письменный Орион-2" width="15%">
-            </a><br>
-            <a href="#">Стол письменный Орион-2</a><br>
-        </div>
-
-        <div class="catalog_item">
-            <a href="#">
-                <img src="/static/img/gallery/small/table_3_small.jpg" alt="Стол письменный с ящиками №3" width="15%">
-            </a><br>
-            <a href="#">Стол письменный с ящиками №3</a><br>
-        </div>
-
-        <div class="footer">
-            <hr>
-            <p> Все права защищены &copy;&nbsp;2020 </p>
-        </div>
-    </div>
-</body>
-</html>
+{% endblock %}

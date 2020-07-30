@@ -4,6 +4,6 @@ __pycache__
 myvenv
 venv
 db.sqlite3
-/static
+/static/img
 .DS_Store
 .idea
