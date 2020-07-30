@@ -1,46 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Корзина</title>
-    <link rel="stylesheet" type="text/css" href = "/static/css/style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <img src="/static/img/logo.png">
-            </div>
-            <ul class="menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="/catalog/">Каталог</a></li>
-                <li><a href="/gallery/">Галерея</a></li>
-                <li><a href="/cart/">Корзина</a></li>
-                <li><a href="/contacts/">Контакты</a></li>
-            </ul>
-        </div>
+{% extends 'mainapp/base.html' %}
+{% load static %}
 
-        <hr>
-        <h1>Корзина</h1>
-        <hr>
+{% block menu %}
+    {% include 'mainapp/include/inc_main_menu.html' %}
+{% endblock %}
 
-        <div id="goods"></div>
+{% block content %}
+    <hr>
+    <h1>Корзина</h1>
+    <hr>
 
-        <hr>
+    <div id="goods"></div>
 
-        <div id="cart">Корзина пока пуста</div>
-            
-        <div>
-            Общая сумма заказа = <span id="result">0</span>
-        </div>
+    <hr>
 
-        <div class="footer">
-            <hr>
-            <p> Все права защищены &copy;&nbsp;2020 </p>
-        </div>
+    <div id="cart">Корзина пока пуста</div>
 
+    <div>
+        Общая сумма заказа = <span id="result">0</span>
     </div>
+{% endblock %}
 
+{% block js %}
     <script>
         var cart = [];
 
@@ -53,7 +34,7 @@
         {
             id: "table_orion_2",
             name: "Стол письменный Орион-2",
-            price: 2000,            
+            price: 2000,
         },
         {
             id: "table_3",
@@ -69,7 +50,7 @@
                 divDomElement.className="catalog_item";
                 // Изображение товара
                 imgDomElement = document.createElement("img");
-                imgDomElement.src = "/static/img/gallery/small/"+good.id+"_small.jpg";
+                imgDomElement.src = "{% static 'img/gallery/small/' %}" + good.id+"_small.jpg";
                 imgDomElement.alt = good.name;
                 imgDomElement.style.width="50%";
                 divDomElement.appendChild(imgDomElement);
@@ -208,5 +189,4 @@
 
     </script>
 
-</body>
-</html>
+{% endblock %}

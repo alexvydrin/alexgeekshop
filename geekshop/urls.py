@@ -18,10 +18,10 @@ from django.urls import path
 from mainapp import views
 
 urlpatterns = [
+    path('', views.main, name="main"),
+    path('catalog/', views.catalog, name="catalog"),
+    path('contacts/', views.contacts, name="contacts"),
+    path('gallery/', views.gallery, name="gallery"),
+    path('cart/', views.cart, name="cart"),
     path('admin/', admin.site.urls),
-    path('', views.main),
-    path('catalog/', views.catalog),
-    path('contacts/', views.contacts),
-    path('gallery/', views.gallery),
-    path('cart/', views.cart),
 ]

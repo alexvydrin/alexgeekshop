@@ -1,16 +1,43 @@
 from django.shortcuts import render
+import json
+
 
 def main(request):
-    return render(request, 'mainapp/index.html', {})
+    context = {
+        'title': "Магазин",
+    }
+    return render(request, 'mainapp/index.html', context)
+
 
 def catalog(request):
-    return render(request, 'mainapp/catalog.html', {})
+    with open("static/db_goods.json", "r", encoding="utf-8") as read_file:
+        goods = json.load(read_file)
+    context = {
+        'title': "Каталог товаров",
+        'goods': goods,
+    }
+    return render(request, 'mainapp/catalog.html', context)
+
 
 def contacts(request):
-    return render(request, 'mainapp/contacts.html', {})
+    context = {
+        'title': "Контакты",
+    }
+    return render(request, 'mainapp/contacts.html', context)
+
 
 def gallery(request):
-    return render(request, 'mainapp/gallery.html', {})
+    with open("static/db_goods.json", "r", encoding="utf-8") as read_file:
+        goods = json.load(read_file)
+    context = {
+        'title': "Галерея",
+        'goods': goods,
+    }
+    return render(request, 'mainapp/gallery.html', context)
+
 
 def cart(request):
-    return render(request, 'mainapp/cart.html', {})
+    context = {
+        'title': "Корзина",
+    }
+    return render(request, 'mainapp/cart.html', context)
