@@ -1,3 +1,5 @@
+import os
+from django.conf import settings
 from django.shortcuts import render
 import json
 
@@ -10,7 +12,7 @@ def main(request):
 
 
 def catalog(request):
-    with open("static/db_goods.json", "r", encoding="utf-8") as read_file:
+    with open(os.path.join(settings.BASE_DIR, 'static/db_goods.json'), "r", encoding="utf-8") as read_file:
         goods = json.load(read_file)
     context = {
         'title': "Каталог товаров",
