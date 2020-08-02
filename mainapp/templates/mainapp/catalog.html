@@ -10,12 +10,14 @@
     <h1>Каталог</h1>
     <hr>
 
-    {% for good in goods %}
+    {% for product in products %}
         <div class="catalog_item">
-            <a href="#">
-                <img src="{% static 'img/gallery/small/' %}{{good.code}}_small.jpg" alt="{{good.name}}" width="15%">
+            <a href="/products/{{product.id}}">
+                <img src="/media/{{ product.image_small }}" alt="{{product.name}}" width="15%">
             </a><br>
-            <a href="#">{{good.name}}</a><br>
+            <a href="#">{{product.name}}</a><br>
+            <br>
+            ({{product.category.name}})
         </div>
     {% endfor %}
 

@@ -1,7 +1,8 @@
 import os
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 import json
+from .models import Product, ProductCategory
 
 
 def main(request):
@@ -12,11 +13,10 @@ def main(request):
 
 
 def catalog(request):
-    with open(os.path.join(settings.BASE_DIR, 'static/db_goods.json'), "r", encoding="utf-8") as read_file:
-        goods = json.load(read_file)
+    products = Product.objects.all()
     context = {
         'title': "Каталог товаров",
-        'goods': goods,
+        'products': products,
     }
     return render(request, 'mainapp/catalog.html', context)
 
@@ -29,7 +29,7 @@ def contacts(request):
 
 
 def gallery(request):
-    with open("static/db_goods.json", "r", encoding="utf-8") as read_file:
+    with open(os.path.join(settings.BASE_DIR, 'static/db_goods.json'), "r", encoding="utf-8") as read_file:
         goods = json.load(read_file)
     context = {
         'title': "Галерея",
@@ -43,3 +43,21 @@ def cart(request):
         'title': "Корзина",
     }
     return render(request, 'mainapp/cart.html', context)
+
+
+def categories(request):
+    categories = ProductCategory.objects.all()
+    context = {
+        'title': "Категории",
+        'categories': categories,
+    }
+    return render(request, 'mainapp/categories.html', context)
+
+
+def products(request, pk=None):
+    product = get_object_or_404(Product, pk=pk)
+    context = {
+        'title': product.name,
+        'product': product,
+    }
+    return render(request, 'mainapp/product.html', context)

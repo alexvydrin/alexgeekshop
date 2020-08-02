@@ -1,0 +1,33 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block menu %}
+    {% include 'mainapp/include/inc_main_menu.html' %}
+{% endblock %}
+
+{% block content %}
+
+    <hr>
+    <h1> {{ product.name }} </h1>
+    <a href="/media/{{ product.image }}" target="_blank">
+        <img class="img_product" src="/media/{{ product.image }}" alt="{{product.name}}" width="20%">
+    </a>
+
+    <div class="short_desc_container">
+        <h3 class="section_title">Краткое описание товара</h3>
+        <p class="short_desc">
+            {{ product.short_desc }}
+        </p>
+        <form action="#">
+            <input type="submit" class="button_buy" value="Купить">
+        </form>
+    </div>
+
+    <div class="detail_desc_container">
+        <h3 class="section_title">Подробное описание товара</h3>
+        <p class="detail_desc">
+            {{ product.description }}
+        </p>
+    </div>
+
+{% endblock %}

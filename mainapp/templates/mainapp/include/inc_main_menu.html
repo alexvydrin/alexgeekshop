@@ -2,6 +2,7 @@
 <ul class="menu">
     <li {% if request.resolver_match.url_name == 'main' %} class="active" {% endif %} ><a href="{% url 'main' %}">Главная</a></li>
     <li {% if request.resolver_match.url_name == 'catalog' %} class="active" {% endif %} ><a href="{% url 'catalog' %}">Каталог</a></li>
+    <li {% if request.resolver_match.url_name == 'categories' %} class="active" {% endif %} ><a href="{% url 'categories' %}">Категории</a></li>
     <li {% if request.resolver_match.url_name == 'gallery' %} class="active" {% endif %} ><a href="{% url 'gallery' %}">Галерея</a></li>
     <li {% if request.resolver_match.url_name == 'cart' %} class="active" {% endif %} ><a href="{% url 'cart' %}">Корзина</a></li>
     <li {% if request.resolver_match.url_name == 'contacts' %} class="active" {% endif %} ><a href="{% url 'contacts' %}">Контакты</a></li>
