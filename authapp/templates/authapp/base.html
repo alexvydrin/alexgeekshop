@@ -9,35 +9,24 @@
         {% endblock %}
     </title>
     {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     {% endblock %}
-
     {% block js %}
+
     {% endblock %}
 </head>
 <body>
 	<div class="container">
-        <div class="header">
-            <div class="logo">
-                <img src="{% static 'img/logo.png' %}" alt="logo">
-            </div>
-            {% block menu %}
+        <div class="login">
+            <div class="h2 text-center head">
+                Аутентификация
+            </div>            
+            
+            {% block content %}
+
             {% endblock %}
         </div>
-
-
-        {% block content %}
-
-        {% endblock %}
-
 	</div>
-
-    {% block footer %}
-        <div class="footer">
-            <hr>
-            <p> Все права защищены &copy;&nbsp;{% now "Y" %} </p>
-        </div>
-    {% endblock %}
-
 </body>
 </html>

@@ -13,10 +13,10 @@ def main(request):
 
 
 def catalog(request):
-    products = Product.objects.all()
+    _products = Product.objects.all()
     context = {
         'title': "Каталог товаров",
-        'products': products,
+        'products': _products,
     }
     return render(request, 'mainapp/catalog.html', context)
 
@@ -46,10 +46,10 @@ def cart(request):
 
 
 def categories(request):
-    categories = ProductCategory.objects.all()
+    _categories = ProductCategory.objects.all()
     context = {
         'title': "Категории",
-        'categories': categories,
+        'categories': _categories,
     }
     return render(request, 'mainapp/categories.html', context)
 
