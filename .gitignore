@@ -5,6 +5,7 @@ myvenv
 venv
 db.sqlite3
 /static/img
+/assets
 /media
 .DS_Store
 .idea
