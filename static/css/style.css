@@ -185,3 +185,56 @@ input[type="email"]:focus {
 #result{
     font-size: 1.5em;
 }
+
+/*  из учебного проекта */
+/************************/
+.links {
+	height: 70px;
+	background-color: #f4f4f4;
+	position: relative;
+	padding-left: 360px;
+}
+.links-menu {
+	margin:	27px auto 0px;
+	position: absolute;
+}
+.links-menu li {
+	float: left;
+	list-style-type: none;
+	padding-right: 42px;
+}
+.links-menu li a {
+	text-decoration: none;
+	color: blue;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.links-menu .active {
+	color: blue;
+    text-decoration: underline;
+	font-size: 18px;
+	font-weight: 700;
+}
+.links-menu li a:hover {
+	color: #212121;
+	font-size: 18px;
+	font-weight: 700;
+}
+.links-menu li a:active {
+	color: #6c6c6c;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.basket {
+	display: block;
+	width: 23px;
+	height: 23px;
+	background-image: url(/static/img/basket.png);
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+
+/************************/

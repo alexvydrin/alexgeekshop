@@ -18,9 +18,12 @@
         <p class="short_desc">
             {{ product.short_desc }}
         </p>
+        <!--
         <form action="#">
             <input type="submit" class="button_buy" value="Купить">
         </form>
+        -->
+        <a href = "{% url 'basket:add' product.pk %}" class="button_buy"> Купить </a>
     </div>
 
     <div class="detail_desc_container">

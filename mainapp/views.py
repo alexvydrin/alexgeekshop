@@ -2,6 +2,8 @@ import os
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404
 import json
+
+from basketapp.models import Basket
 from .models import Product, ProductCategory
 
 
@@ -13,6 +15,7 @@ def main(request):
 
 
 def catalog(request):
+    # ТОDO: не функция используется в проекте - удалить
     _products = Product.objects.all()
     context = {
         'title': "Каталог товаров",
@@ -54,10 +57,40 @@ def categories(request):
     return render(request, 'mainapp/categories.html', context)
 
 
-def products(request, pk=None):
-    product = get_object_or_404(Product, pk=pk)
+def product(request, pk=None):
+    _product = get_object_or_404(Product, pk=pk)
     context = {
-        'title': product.name,
-        'product': product,
+        'title': _product.name,
+        'product': _product,
     }
     return render(request, 'mainapp/product.html', context)
+
+
+def products(request, pk=None):
+
+    basket = []
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
+
+    title = 'продукты'
+    links_menu = ProductCategory.objects.all()
+
+    if pk is None:
+        pk = 0
+
+    if pk == 0:
+        _products = Product.objects.all().order_by('price')
+        category = {'name': 'все'}
+    else:
+        category = get_object_or_404(ProductCategory, pk=pk)
+        _products = Product.objects.filter(category__pk=pk).order_by('price')
+
+    content = {
+        'title': title,
+        'links_menu': links_menu,
+        'category': category,
+        'products': _products,
+        'basket': basket,
+    }
+
+    return render(request, 'mainapp/products_list.html', content)

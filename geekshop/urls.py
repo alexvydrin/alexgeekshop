@@ -25,10 +25,13 @@ urlpatterns = [
     path('contacts/', views.contacts, name="contacts"),
     path('gallery/', views.gallery, name="gallery"),
     path('cart/', views.cart, name="cart"),
-    path('catalog/', views.catalog, name="catalog"),
-    path('categories/', views.categories, name="categories"),
+    # path('catalog/', views.catalog, name="catalog"),
+    # path('categories/', views.categories, name="categories"),
+    # path('product/0/', views.products, name="catalog"),
+    path('product/<int:pk>/', views.product, name="product"),
     path('products/', include('mainapp.urls', namespace='products')),
     path('auth/', include('authapp.urls', namespace='auth')),
+    path('basket/', include('basketapp.urls', namespace= 'basket')),
     path('admin/', admin.site.urls),
 ]
 

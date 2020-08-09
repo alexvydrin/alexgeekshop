@@ -1,0 +1,38 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block menu %}
+    {% include 'mainapp/include/inc_main_menu.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="details">
+        <div class="links clearfix">
+            {% include 'mainapp/include/inc_categories_menu.html' %}
+        </div >
+
+        <div class="products_list">
+            <div class = "title clearfix">
+                <h2>
+                    Категория: "{{ category.name|title }}"
+                </h2>
+            </div>
+            <div class = "category-products clearfix">
+                {% for product in products %}
+                    <div class = "catalog_item">
+                        <a href="/product/{{product.id}}">
+                            <img src="/media/{{ product.image_small }}" alt="product">
+                            <div class = "text">
+                                <h4> {{ product.name }} </h4>
+                            </div>
+                        </a>
+                        <a href = "{% url 'basket:add' product.pk %}" class="button_buy"> Купить </a>
+                        <p> {{ product.description }} </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+{% endblock %}
