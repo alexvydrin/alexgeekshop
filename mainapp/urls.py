@@ -8,5 +8,5 @@ urlpatterns = [
    path('', mainapp.products, name='index'),
    path('<int:pk>/', mainapp.products, name='product'),
    path('0/', mainapp.products, name="catalog"),
-   path('category/<int:pk>/', mainapp.products, name= 'category'),
+   path('category/<int:pk>/', mainapp.products, name='category'),
 ]

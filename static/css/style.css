@@ -237,4 +237,11 @@ input[type="email"]:focus {
 	right: 30px;
 }
 
+.basket_list .basket_record {
+    position: relative;
+    display: block;
+    height: 170px;
+    float: none;
+}
+
 /************************/

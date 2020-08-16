@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+    {% block js %}
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/basket_scripts.js' %}"></script>
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <h2>
+            Ваша корзина,
+            {% if user.first_name %}
+                {{ user.first_name|title}}
+            {% else %}
+                Пользователь
+            {% endif %}
+        </h2>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
