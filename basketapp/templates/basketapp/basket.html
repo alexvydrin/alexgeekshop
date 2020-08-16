@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Корзина</title>
-</head>
-<body>
-
-    Здесь будет корзина
-
-</body>
-</html>
+{% extends 'basketapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="basket_list">
+        {% include 'basketapp/includes/inc_basket_list.html' %}
+    </div>
+    <button class="btn btn-round">
+        <a href="{% url 'main' %}">на главную</a>
+    </button>
+{% endblock %}

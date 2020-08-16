@@ -35,4 +35,35 @@
     </div>
 
     <div class="clr"></div>
+
+    <h2> Горячее предложение </h2>
+
+     <div class = "catalog_item">
+        <a href="/product/{{hot_product.id}}">
+            <img src="/media/{{ hot_product.image_small }}" alt="hot_product">
+            <div class = "text">
+                <h4> {{ hot_product.name }} </h4>
+            </div>
+        </a>
+        <a href = "{% url 'basket:add' hot_product.pk %}" class="button_buy"> Купить </a>
+        <p> {{ hot_product.description }} </p>
+    </div>
+
+
+    <h2> Похожие товары </h2>
+
+    {% for product in same_products %}
+        <div class = "catalog_item">
+            <a href="/product/{{product.id}}">
+                <img src="/media/{{ product.image_small }}" alt="product">
+                <div class = "text">
+                    <h4> {{ product.name }} </h4>
+                </div>
+            </a>
+            <a href = "{% url 'basket:add' product.pk %}" class="button_buy"> Купить </a>
+            <p> {{ product.description }} </p>
+        </div>
+    {% endfor %}
+
+
 {% endblock %}
