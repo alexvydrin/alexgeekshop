@@ -1,16 +1,20 @@
 {% extends 'adminapp/base.html' %}
 {% load static %}
+{% load my_tags %}
 
 
 {% block content %}
     <div class="users_list">
 		<button class="new_user">
-			<a href={% url 'admin:user_create' %}>новый пользователь</a>
+			<a href={% url 'admin:user_create' %}>
+                новый пользователь
+            </a>
 		</button>
-		{% for object in objects %}
+		{% for object in object_list %}
 			<div class="user_record {% if not object.is_active %}not_active{% endif %}">
-				<img src="/media/{{ object.avatar|default:'users_avatars/default.jpg' }}" alt="{{ object.username }}">
-				<div class="user_role">
+				<img src="{{ object.avatar|media_folder_users }}" alt="{{ object.username }}">
+
+                <div class="user_role">
 					{% if object.is_superuser %}администратор{% else %}пользователь{% endif %}
 					<button>
 						<a href={% url 'admin:user_update' object.pk %}>редактировать</a>

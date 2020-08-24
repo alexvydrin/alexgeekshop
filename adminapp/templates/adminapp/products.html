@@ -1,16 +1,19 @@
 {% extends 'adminapp/base.html' %}
 {% load static %}
+{% load my_tags %}
 
 
 {% block content %}
     <div class="products_list">
 		<button class="new_product">
-			<a href={% url 'admin:product_create' category.pk %}>новый продукт</a>
+			<a href={% url 'admin:product_create' category.pk %}>
+                новый продукт
+            </a>
 		</button>
 		
 		{% for object in objects %}
-			<div class="product_record">
-				<img src="/media/{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.name }}">
+			<div class="product_record {% if not object.is_active %}not_active{% endif %}">
+				<img src="{{ object.image|media_folder_products }}" alt="{{ object.name }}">
 				<div class="product_name">
 					{{ object.name|title }}
 				</div>

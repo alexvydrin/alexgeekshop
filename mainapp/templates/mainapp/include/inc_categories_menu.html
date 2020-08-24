@@ -1,7 +1,8 @@
 <ul class="links-menu">
+
     <li>
         <a href="{% url 'products:category' 0 %}"
-            class="{% if request.resolver_match.kwargs.pk == 0 %}
+            class="{% if request.resolver_match.kwargs.pk == 0 or request.resolver_match.kwargs.pk is None %}
                 active
             {% endif %}">
             все
