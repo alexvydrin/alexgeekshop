@@ -5,7 +5,9 @@
 {% block content %}
     <div class="categories_list">
         <button class="new_category">
-            <a href={% url 'admin:category_create' %}>новая категория</a>
+            <a href={% url 'admin:category_create' %}>
+                новая категория
+            </a>
         </button>
 
         {% for object in objects %}

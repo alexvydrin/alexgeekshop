@@ -1,8 +1,8 @@
 <ul class="menu">
     <li {% if request.resolver_match.url_name == 'main' %} class="active" {% endif %} ><a href="{% url 'main' %}">Главная</a></li>
 
-    <li {% if request.resolver_match.namespace == 'products' %} class="active" {% endif %}>
-        <a href = "{% url 'products:catalog' %}">
+    <li class="{% if request.resolver_match.namespace == 'products' %}active{% endif %}">
+        <a href="{% url 'products:index' %}">
             Каталог
         </a>
     </li>
@@ -20,6 +20,12 @@
             <a href = "{% url 'auth:edit' %}">
                 {{ user.username }} <!-- user.first_name|default:'Пользователь' -->
             </a>
+        </li>
+    {% endif %}
+
+    {% if user.is_superuser %}
+        <li>
+            <a href="{% url 'admin:users' %}">админка</a>
         </li>
     {% endif %}
 

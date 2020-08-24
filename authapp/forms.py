@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, User
 from .models import ShopUser
 
 
-class ShopUserLoginForm (AuthenticationForm):
+class ShopUserLoginForm(AuthenticationForm):
     class Meta:
         model = ShopUser
         fields = ('username', 'password')
@@ -38,7 +38,7 @@ class ShopUserRegisterForm(UserCreationForm):
         return data
 
 
-class ShopUserEditForm (UserChangeForm):
+class ShopUserEditForm(UserChangeForm):
     class Meta:
         model = ShopUser
         fields = ('username', 'first_name', 'email', 'age', 'avatar', 'password')

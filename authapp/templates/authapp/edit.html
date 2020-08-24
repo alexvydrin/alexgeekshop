@@ -1,6 +1,6 @@
 {% extends 'authapp/base.html' %}
 {% load static %}
-
+{% load my_tags %}
 
 {% block content %}
     <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
@@ -13,5 +13,5 @@
             на главную
         </a>
     </button>
-    <div class="user_avatar"><img src="/media/{{ user.avatar }}" alt="аватар"></div>
+    <div class="user_avatar"><img src="{{ object.avatar|media_folder_users }}" alt="аватар"></div>
 {% endblock %}
