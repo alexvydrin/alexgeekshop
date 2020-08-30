@@ -2,7 +2,7 @@ from basketapp.models import Basket
 
 
 def basket(request):
-    print(f'context processor basket works')
+    # print(f'context processor basket works')
     _basket = []
 
     if request.user.is_authenticated:

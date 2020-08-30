@@ -43,6 +43,7 @@
                                 <h4> {{ product.name }} </h4>
                             </div>
                         </a>
+                        <h5> Цена: {{ product.price }} </h5>
                         <a href = "{% url 'basket:add' product.pk %}" class="button_buy"> Купить </a>
                         <p> {{ product.description }} </p>
                     </div>
@@ -62,6 +63,7 @@
                 <h4> {{ hot_product.name }} </h4>
             </div>
         </a>
+        <h5> Цена: {{ hot_product.price }} </h5>
         <a href = "{% url 'basket:add' hot_product.pk %}" class="button_buy"> Купить </a>
         <p> {{ hot_product.description }} </p>
     </div>
@@ -77,6 +79,7 @@
                     <h4> {{ product.name }} </h4>
                 </div>
             </a>
+            <h5> Цена: {{ product.price }} </h5>
             <a href = "{% url 'basket:add' product.pk %}" class="button_buy"> Купить </a>
             <p> {{ product.description }} </p>
         </div>

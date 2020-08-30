@@ -23,6 +23,7 @@
             <input type="submit" class="button_buy" value="Купить">
         </form>
         -->
+        <h5> Цена: {{ product.price }} </h5>
         <a href = "{% url 'basket:add' product.pk %}" class="button_buy"> Купить </a>
     </div>
 
