@@ -4,10 +4,11 @@ __pycache__
 myvenv
 venv
 db.sqlite3
-vk.json
 /static/img
 /assets
 /media
 /tmp
 .DS_Store
 .idea
+vk.json
+geekshop/vk.json
