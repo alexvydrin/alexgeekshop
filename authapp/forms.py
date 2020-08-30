@@ -1,3 +1,5 @@
+import hashlib
+from random import random
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 from .models import ShopUser
@@ -36,6 +38,17 @@ class ShopUserRegisterForm(UserCreationForm):
         if data[-3:].upper() == ".UK":
             raise forms.ValidationError("Домен .UK запрещен")
         return data
+
+    # def save(self, **kwargs):
+    def save(self):
+        user = super(ShopUserRegisterForm, self).save()
+
+        user.is_active = False
+        salt = hashlib.sha1(str(random()).encode('utf8')).hexdigest()[:6]
+        user.activation_key = hashlib.sha1((user.email+salt).encode('utf8')).hexdigest()
+        user.save()
+
+        return user
 
 
 class ShopUserEditForm(UserChangeForm):

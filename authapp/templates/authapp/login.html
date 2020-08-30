@@ -3,6 +3,14 @@
 
 
 {% block content %}
+
+    {% if message %}
+        {{ message }}
+         <a href={{ message_link }}>
+            {{ message_link }}
+        </a>
+    {% endif %}
+
     <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
         {% csrf_token %}
 
@@ -17,6 +25,11 @@
     <button class="btn btn-round form-control">
         <a href="{% url 'auth:register' %}" class="">
             зарегистрироваться
+        </a>
+    </button>
+    <button class="btn btn-round form-control">
+        <a href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
+            Вход через ВКонтакте
         </a>
     </button>
 

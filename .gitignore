@@ -7,5 +7,7 @@ db.sqlite3
 /static/img
 /assets
 /media
+/tmp
 .DS_Store
 .idea
+vk.json
