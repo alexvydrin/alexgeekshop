@@ -17,22 +17,23 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import include
 # from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from mainapp import views
 
 urlpatterns = [
-    path('', views.main, name="main"),
+    re_path('^$', views.main, name="main"),
+    path('', include('social_django.urls', namespace='social')),
     path('contacts/', views.contacts, name="contacts"),
     path('gallery/', views.gallery, name="gallery"),
     path('cart/', views.cart, name="cart"),
-    # path('catalog/', views.catalog, name="catalog"),
-    # path('categories/', views.categories, name="categories"),
-    # path('product/0/', views.products, name="catalog"),
     path('product/<int:pk>/', views.product, name="product"),
     path('products/', include('mainapp.urls', namespace='products')),
     path('auth/', include('authapp.urls', namespace='auth')),
     path('basket/', include('basketapp.urls', namespace='basket')),
     path('admin/', include('adminapp.urls', namespace='admin')),
+    # path('catalog/', views.catalog, name="catalog"),
+    # path('categories/', views.categories, name="categories"),
+    # path('product/0/', views.products, name="catalog"),
     # path('admin_old/', admin.site.urls),
 ]
 
