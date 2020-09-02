@@ -1,0 +1,46 @@
+{% extends "ordersapp/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% include 'ordersapp/includes/inc_order_summary.html' %}
+    <div class="order_form">
+        <form action = "" method = "post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <table class="table">
+                {{ orderitems.management_form }}
+                {% for form in orderitems.forms %}
+                    {% if forloop.first %}
+                        <thead>
+                            <tr>
+                                {% for field in form.visible_fields %}
+                                   <th class="{% cycle 'td1' 'td2' 'td3' %} order formset_td">
+                                        {{ field.label|capfirst }}
+                                   </th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                    {% endif %}
+                    <tr class="formset_row">
+                        {% for field in form.visible_fields %}
+                            <td class="{% cycle 'td1' 'td2' 'td3' %} order formset_td">
+                                {% if forloop.first %}
+                                    {% for hidden in form.hidden_fields %}
+                                        {{ hidden }}
+                                    {% endfor %}
+                                {% endif %}
+                                {{ field.errors.as_ul }}
+                                {{ field }}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+            <button type="submit" value="сохранить" class="btn btn-default btn-round form-control last">
+                сохранить
+            </button>
+            {% include 'ordersapp/includes/inc_order_actions.html' %}
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'ordersapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="h2 text-center head">
+        Ваши заказы,
+        {% if user.first_name %}
+            {{ user.first_name|title}}
+        {% else %}
+            Пользователь
+        {% endif %}
+    </div>
+    <table class="table orders_list">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Создан</th>
+                <th>Обновлен</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in object_list %}
+                {% if item.is_active %}
+                    <tr>
+                        <td class="td1 orders_list">{{ item.pk }}</td>
+                        <td>{{ item.created|date:"Y-m-d H:i:s" }}</td>
+                        <td>{{ item.updated|date:"Y-m-d H:i:s" }}</td>
+                        <td>{{ item.get_status_display }}</td>
+                        <td>
+                            <a href="{% url 'ordersapp:order_read' item.pk %}">
+                                посмотреть
+                            </a>
+                        </td>
+                        <td>
+                            {% if item.status == 'FM' %}
+                                <a href="{% url 'ordersapp:order_update' item.pk %}">
+                                    редактировать
+                                </a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.status == 'FM' %}
+                                <a href="{% url 'ordersapp:order_delete' item.pk %}">
+                                    удалить
+                                </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="btn btn-default btn-round">
+        <a href="{% url 'main' %}">
+            на главную
+        </a>
+    </button>
+    <button class="btn btn-default btn-round">
+        <a href="{% url 'ordersapp:order_create' %}">
+            новый
+        </a>
+    </button>
+{% endblock %}
