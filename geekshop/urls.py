@@ -30,6 +30,7 @@ urlpatterns = [
     path('products/', include('mainapp.urls', namespace='products')),
     path('auth/', include('authapp.urls', namespace='auth')),
     path('basket/', include('basketapp.urls', namespace='basket')),
+    re_path(r'^order/', include('ordersapp.urls', namespace='order')),
     path('admin/', include('adminapp.urls', namespace='admin')),
     # path('catalog/', views.catalog, name="catalog"),
     # path('categories/', views.categories, name="categories"),

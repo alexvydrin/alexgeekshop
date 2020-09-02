@@ -7,19 +7,42 @@
         </a>
     </li>
 
-    <li {% if request.resolver_match.url_name == 'gallery' %} class="active" {% endif %} ><a href="{% url 'gallery' %}">Галерея</a></li>
+    <li {% if request.resolver_match.url_name == 'gallery' %} class="active" {% endif %}>
+        <a href="{% url 'gallery' %}">
+            Галерея
+        </a>
+    </li>
 
     <!--
     <li { if request.resolver_match.url_name == 'cart' } class="active" { endif } ><a href="{ url 'cart' }">Корзина</a></li>
     -->
 
-    <li {% if request.resolver_match.url_name == 'contacts' %} class="active" {% endif %} ><a href="{% url 'contacts' %}">Контакты</a></li>
+    <li {% if request.resolver_match.url_name == 'contacts' %} class="active" {% endif %}>
+        <a href="{% url 'contacts' %}">
+            Контакты
+        </a>
+    </li>
 
     {% if user.is_authenticated %}
         <li>
-            <a href = "{% url 'auth:edit' %}">
-                {{ user.first_name|default:'Пользователь' }} <!-- user.username -->
-            </a>
+            <span class="dropdown">
+                <a class="dropdown-toggle" href = "" data-toggle="dropdown">
+                    {{ user.first_name|default:'Пользователь' }}  <!-- user.username -->
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="{% url 'auth:edit' %}">
+                            профиль
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'ordersapp:orders_list' %}">
+                            заказы
+                        </a>
+                    </li>
+                </ul>
+            </span>
         </li>
     {% endif %}
 
