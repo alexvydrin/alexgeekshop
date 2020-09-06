@@ -12,6 +12,61 @@ html, body {
 	height: 100%;
 }
 
+.order_container {
+    margin: 25px auto;
+    width: 900px;
+}
+
+.order_container button a {
+    text-decoration: none;
+    color: #555;
+}
+
+.order_container img {
+    display: block;
+    float: left;
+    width: 150px;
+    border-radius: 25px;
+}
+
+button.last {
+    margin-bottom: 10px;
+}
+
+.not_active {
+    opacity: 0.5;
+}
+
+.table.orders_list {
+    min-width: 600px;
+}
+
+.td1.orders_list {
+    width: 40px;
+}
+
+.table.order.formset {
+    min-width: 400px;
+}
+
+.td1.order.formset_td {
+    /*width: 70%;*/
+}
+
+.td2.order.formset_td {
+    /*width: 50px;*/
+}
+
+.td3.order.formset_td {
+    /*width: 50px;*/
+    text-align: center;
+}
+
+.td4.order.formset_td {
+    /*width: 50px;*/
+    text-align: center;
+}
+
 .product_read {
     margin: 0 auto;
     width: 1000px;
@@ -625,7 +680,7 @@ html, body {
 
 .slider {
 	height: 800px;
-	background-image: url(/static/img/slider.jpg); 
+	background-image: url(/static/img/logo.png);
 	/*padding-left: 98px;*/
 	padding-left: 78px;
 	padding-right: 211px;
@@ -911,13 +966,13 @@ html, body {
 }
 
 .promo-content-1 {
-	background-image: url(/static/img/promo-img1.jpg);
+	background-image: url(/static/img/logo.png);
 	width: 683px;
 	height: 683px;
 	float: left;
 }
 .promo-content-2 {
-	background-image: url(/static/img/promo-img2.jpg);
+	background-image: url(/static/img/logo.png);
 	width: 683px;
 	height: 683px;
 	float: right;
@@ -1026,7 +1081,7 @@ html, body {
 	margin-top: 105px;
 	height: 800px;
 	padding-left: 98px;
-	background-image: url(/static/img/slider-hotdeal.jpg);
+	background-image: url(/static/img/logo.png);
 	position: relative;
 }
 .text-hotDeal {
@@ -1055,7 +1110,7 @@ html, body {
 	height: 570px;
 	width: 570px;	
 	float: left;
-	background-image: url(/static/img/product-1-lg.jpg);
+	background-image: url(/static/img/logo.png);
 }
 .exclusive-small {
 	width: 570px;
@@ -1115,7 +1170,7 @@ html, body {
 .mobile {
 	height: 516px;
 	margin-top: 90px;
-	background-image: url(/static/img/mobile-back.jpg);
+	background-image: url(/static/img/logo.png);
 	padding-left: 99px;
 	position: relative;
 }
@@ -1596,7 +1651,6 @@ td:first-child {
 	color:  #ffffff;
 	font-size: 22px;
 	font-weight: 700;
-	line-height: 24px;
 	box-shadow: 0px 2px 4.85px 0.15px rgba(33, 33, 33, 0.35);
 	line-height: 70px;
 	letter-spacing: 6px;
