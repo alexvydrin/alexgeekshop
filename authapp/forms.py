@@ -29,7 +29,7 @@ class ShopUserRegisterForm(UserCreationForm):
 
     def clean_age(self):
         data = self.cleaned_data['age']
-        if data < 10: # 18
+        if data < 10:  # 18
             raise forms.ValidationError("Вы слишком молоды!")
         return data
 
@@ -37,6 +37,10 @@ class ShopUserRegisterForm(UserCreationForm):
         data = self.cleaned_data['email']
         if data[-3:].upper() == ".UK":
             raise forms.ValidationError("Домен .UK запрещен")
+        users = ShopUser.objects.filter(email=data)  # Проверим на дублирование электронной почты
+        print("Пользователь с такой почтой уже существует")
+        if len(users):
+            raise forms.ValidationError("Пользователь с такой почтой уже существует")
         return data
 
     def save(self, **kwargs):
@@ -73,6 +77,9 @@ class ShopUserEditForm(UserChangeForm):
         data = self.cleaned_data['email']
         if data[-3:].upper() == ".UK":
             raise forms.ValidationError("Домен .UK запрещен")
+        users = ShopUser.objects.filter(email=data)  # Проверим на дублирование электронной почты
+        if len(users):
+            raise forms.ValidationError("Пользователь с такой почтой уже существует")
         return data
 
 
