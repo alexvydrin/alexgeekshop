@@ -12,14 +12,14 @@ class ShopUser(AbstractUser):
     age = models.PositiveIntegerField(verbose_name='возраст', default=18)
 
     activation_key = models.CharField(max_length=128, blank=True)
-    activation_key_expires = models.DateTimeField(default=(datetime.now() + timedelta(hours=48)))
+    activation_key_expires = models.DateTimeField(auto_now_add=True)  # default=(datetime.now + timedelta(hours=48))
 
     def is_activation_key_expired(self):
         # if now() <= self.activation_key_expires:
         #    return False
         # else:
         #    return True
-        return datetime.now(pytz.timezone(settings.TIME_ZONE)) > self.activation_key_expires
+        return datetime.now(pytz.timezone(settings.TIME_ZONE)) > self.activation_key_expires + timedelta(hours=48)
 
 
 class ShopUserProfile(models.Model):
@@ -36,11 +36,13 @@ class ShopUserProfile(models.Model):
     aboutMe = models.TextField(verbose_name='о себе', max_length=512, blank=True)
     gender = models.CharField(verbose_name='пол', max_length=1, choices=GENDER_CHOICES, blank=True)
 
+    # noinspection PyMethodParameters,PyUnusedLocal
     @receiver(post_save, sender=ShopUser)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
             ShopUserProfile.objects.create(user=instance)
 
+    # noinspection PyMethodParameters,PyUnusedLocal
     @receiver(post_save, sender=ShopUser)
     def save_user_profile(sender, instance, **kwargs):
         instance.shopuserprofile.save()
