@@ -77,7 +77,8 @@ class ShopUserEditForm(UserChangeForm):
         data = self.cleaned_data['email']
         if data[-3:].upper() == ".UK":
             raise forms.ValidationError("Домен .UK запрещен")
-        users = ShopUser.objects.filter(email=data)  # Проверим на дублирование электронной почты
+        # Проверим на дублирование электронной почты
+        users = ShopUser.objects.filter(email=data).exclude(username=self.cleaned_data['username'])
         if len(users):
             raise forms.ValidationError("Пользователь с такой почтой уже существует")
         return data
