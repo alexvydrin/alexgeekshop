@@ -4,6 +4,7 @@ __pycache__
 myvenv
 venv
 db.sqlite3
+database.cnf
 /static/img
 /assets
 /media
@@ -12,3 +13,4 @@ db.sqlite3
 .idea
 vk.json
 env.json
+db.json
