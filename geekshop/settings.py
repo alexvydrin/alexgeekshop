@@ -24,8 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wag($&!r%xw_x-731tk5-#y&7_5do(om&bg=0b%!y0^&m836m%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+if os.name == 'nt':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'alexgeekshop.pythonanywhere.com']
 
