@@ -38,7 +38,7 @@
                 {% for product in products %}
                     <div class = "catalog_item">
                         <a href="/product/{{product.id}}">
-                            <img src="/media/{{ product.image_small }}" alt="product">
+                            <img src="{{ MEDIA_URL }}{{ product.image_small }}" alt="product">
                             <div class = "text">
                                 <h4> {{ product.name }} </h4>
                             </div>
@@ -58,7 +58,7 @@
 
      <div class = "catalog_item">
         <a href="/product/{{hot_product.id}}">
-            <img src="/media/{{ hot_product.image_small }}" alt="hot_product">
+            <img src="{{ MEDIA_URL }}{{ hot_product.image_small }}" alt="hot_product">
             <div class = "text">
                 <h4> {{ hot_product.name }} </h4>
             </div>
@@ -74,7 +74,7 @@
     {% for product in same_products %}
         <div class = "catalog_item">
             <a href="/product/{{product.id}}">
-                <img src="/media/{{ product.image_small }}" alt="product">
+                <img src="{{ MEDIA_URL }}{{ product.image_small }}" alt="product">
                 <div class = "text">
                     <h4> {{ product.name }} </h4>
                 </div>

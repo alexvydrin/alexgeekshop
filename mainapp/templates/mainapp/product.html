@@ -9,8 +9,8 @@
 
     <hr>
     <h1> {{ product.name }} </h1>
-    <a href="/media/{{ product.image }}" target="_blank">
-        <img class="img_product" src="/media/{{ product.image }}" alt="{{product.name}}" width="20%">
+    <a href="{{ MEDIA_URL }}{{ product.image }}" target="_blank">
+        <img class="img_product" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{product.name}}" width="20%">
     </a>
 
     <div class="short_desc_container">

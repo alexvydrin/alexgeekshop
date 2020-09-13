@@ -20,8 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'wag($&!r%xw_x-731tk5-#y&7_5do(om&bg=0b%!y0^&m836m%'
+# Настройки в отдельном файле
+# if os.path.exists('geekshop/env.json'): #  файл с настройками должен существовать всегда
+with open('geekshop/env.json', 'r') as f:
+    ENV = json.load(f)
+    DOMAIN_NAME = ENV['DOMAIN_NAME']
+    # SECURITY WARNING: keep the secret key used in production secret!
+    SECRET_KEY = ENV['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.name == 'nt':
@@ -29,7 +34,8 @@ if os.name == 'nt':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'alexgeekshop.pythonanywhere.com']
+# ALLOWED_HOSTS = ['127.0.0.1', 'alexgeekshop.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -75,6 +81,7 @@ TEMPLATES = [
                 'mainapp.context_processors.basket',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -85,13 +92,13 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-if os.path.exists('database.cnf'):
+file_database_cnf = 'database.cnf'
+if os.path.exists(file_database_cnf):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'OPTIONS': {
-                'read_default_file': os.path.join(BASE_DIR, 'database.cnf'),
+                'read_default_file': os.path.join(BASE_DIR, file_database_cnf),
             }
         }
     }
@@ -142,10 +149,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-   os.path.join(BASE_DIR, "static"),
+   os.path.join(BASE_DIR, "assets"),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -199,9 +207,3 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
 )
-
-# Если приложение запущено не локально, то на хостинге создадим файл который содержит настройки
-if os.path.exists('geekshop/env.json'):
-    with open('geekshop/env.json', 'r') as f:
-        ENV = json.load(f)
-        DOMAIN_NAME = ENV['DOMAIN_NAME']

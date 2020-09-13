@@ -13,7 +13,7 @@
     {% for product in products %}
         <div class="catalog_item">
             <a href="/products/{{product.id}}">
-                <img src="/media/{{ product.image_small }}" alt="{{product.name}}" width="15%">
+                <img src="{{ MEDIA_URL }}{{ product.image_small }}" alt="{{product.name}}" width="15%">
             </a><br>
             <a href="/products/{{product.id}}">{{product.name}}</a><br>
             <br>

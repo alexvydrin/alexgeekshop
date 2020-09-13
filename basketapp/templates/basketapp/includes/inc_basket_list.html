@@ -1,6 +1,6 @@
 {% for item in basket_items %}
     <div class="basket_record">
-        <img src="/media/{{ item.product.image_small }}" alt="{{ item.product.short_desc }}">
+        <img src="{{ MEDIA_URL }}{{ item.product.image_small }}" alt="{{ item.product.short_desc }}">
         <span class="category_name">{{ item.product.category.name }}</span>
         <span class="product_name">{{ item.product.name }}</span>
         <span class="product_price">{{ item.product.price }}&nbspруб</span>

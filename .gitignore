@@ -5,8 +5,7 @@ myvenv
 venv
 db.sqlite3
 database.cnf
-/static/img
-/assets
+/static
 /media
 /tmp
 .DS_Store

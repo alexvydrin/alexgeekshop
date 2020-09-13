@@ -1,0 +1,263 @@
+body {
+    background-color: #f8f8f8; /* цвет фона на всех страницах по умолчанию */
+}
+
+.menu {
+    float:right;
+}
+
+.menu li {
+    list-style-type: none; /* убрать маркеры списка для меню сайта */
+    display: inline;
+    padding: 8px;
+}
+
+.menu li a {
+    color: #8B00FF; /* цвет для ссылок меню сайта */
+    font-size: 2em; /* размер шрифта для ссылок меню сайта */
+    font-style: italic; /* начертание шрифта для ссылок меню сайта */
+    text-decoration-line: none;
+
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.menu li a:hover{
+    color:blue;
+}
+
+/*блок header*/
+.header{
+	height:70px;
+	background: url(../img/header.png) no-repeat center bottom;
+}
+
+/*логотип*/
+.logo{
+    float:left;
+    margin:15px 5px 5px 5px;
+}
+
+/*блок footer*/
+.footer{
+	height:70px;
+	background-color: gray;
+	text-align: right;
+}
+
+.footer p {
+    padding: 5px 15px 0 0;
+}
+
+/* заголовки на странице “Подробное описание товара” */
+.section_title {
+    color: black; /* цвет текста */
+    font-size: 18px; /* размер шрифта */
+    font-weight: 400; /* насыщенность шрифта */
+    background-color: #eaeaea; /* цвет фона */
+}
+
+/* текст краткого описания товара */
+.short_desc {
+    color: #707070; /* цвет текста */
+    font-size: 14px; /* размер шрифта */
+    font-style: italic; /* начертание шрифта */
+    line-height: 16px; /* высота текста */
+}
+
+/* текст подробного описания товара */
+.detail_desc {
+    color: #484343; /* цвет текста */
+    font-size: 16px; /* размер шрифта */
+    font-weight: 400; /* насыщенность шрифта */
+    line-height: 24px; /* высота текста */
+    text-align: left; /* расположение текста */
+}
+
+/* список внурти подраздела "характеристики товара" */
+.characteristics li {
+    color: blue; /* цвет текста */
+    font-size: 0.8em; /* размер шрифта */
+    list-style-image: url("../img/marker.png");
+}
+
+.characteristics_table, .store_plan {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.characteristics_table td, .characteristics_table th, .store_plan td{
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.store_plan tr:first-child {
+    height: 50px;
+}
+
+
+/* поля ввода на форме */
+input[type="text"], input[type="tel"], input[type="email"] {
+    width: 308px; /* Ширина */
+    height: 18px; /* Высота */
+    color: black; /* цвет текста */
+    font-size: 16px; /* размер шрифта */
+}
+
+/* поля ввода (первая буква)*/
+input, textarea {
+  text-transform: capitalize;
+}
+
+/* поле ввода e-mail при вводе e-mail*/
+input[type="email"]:focus {
+	color: blue;
+	background-color:  grey;
+}
+
+/* изображения товаров на странице подробного описания */
+.img_product {
+    outline: 1px solid blue;
+    float:left;
+    margin:0px 30px 10px 0px;
+}
+
+.img_product:hover{
+    outline:none;
+}
+
+.detail_desc_container {
+    clear: both;  /* отключаем обтекание */
+}
+
+/*Стиль первой буквы каждого параграфа на каждой странице каталога*/
+.short_desc:first-letter, .detail_desc:first-letter {
+    color:blue;
+    font: bold normal 3em;
+}
+
+/*Родительский класс container*/
+.container{
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+/*Кнопка купить*/
+.button_buy{
+	font-size: 1.5em;
+    background-color: #8B00FF; /* цвет как для ссылок меню сайта */
+}
+.button_buy:hover{
+	background-color: yellow;
+}
+.button_buy:active{
+	background-color: green;
+}
+
+.catalog_item{
+    width: 31%;
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	margin-bottom: 20px;
+}
+
+.catalog_item img{
+	width:50%;
+}
+
+/*Карта*/
+.map{
+	width: 100%;
+	height: 374px;
+}
+
+/* Галерея */
+#big_picture{
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Корзина */
+#result{
+    font-size: 1.5em;
+}
+
+/*  из учебного проекта */
+/************************/
+.links {
+	height: 70px;
+	background-color: #f4f4f4;
+	position: relative;
+	padding-left: 360px;
+}
+.links-menu {
+	margin:	27px auto 0px;
+	position: absolute;
+}
+.links-menu li {
+	float: left;
+	list-style-type: none;
+	padding-right: 42px;
+}
+.links-menu li a {
+	text-decoration: none;
+	color: blue;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.links-menu .active {
+	color: blue;
+    text-decoration: underline;
+	font-size: 18px;
+	font-weight: 700;
+}
+.links-menu li a:hover {
+	color: #212121;
+	font-size: 18px;
+	font-weight: 700;
+}
+.links-menu li a:active {
+	color: #6c6c6c;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.basket {
+	display: block;
+	width: 23px;
+	height: 23px;
+	background-image: url(/static/img/basket.png);
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+
+.basket_list .basket_record {
+    position: relative;
+    display: block;
+    height: 170px;
+    float: none;
+}
+
+
+.products_list .title .paginator{
+    display: block;
+    position: relative;
+    left: 75px;
+    top: 15px;
+    margin-left: 25px;
+    color: #555;
+    float: left;
+}
+
+.paginator a, .paginator a:visited {
+    color: #555;
+    text-decoration: none;
+}
+
+/************************/
