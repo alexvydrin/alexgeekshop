@@ -3,14 +3,17 @@
     <hr>
     <div class = "h4" >заказчик: {{ user.last_name }} {{ user.first_name }} </div>
     <div class = "h4" >обновлен: {{ object.updated|date:"Y-m-d H:i:s" }} </div>
-    <div class = "h4" >cтатус: {{ object.get_status_display }}</div>
+    <div class = "h4" >статус: {{ object.get_status_display }}</div>
     <hr>
-    <div class="h4">
-        общее количество товаров: <span class="order_total_quantity">{{ object.get_total_quantity }}</span>
-    </div>
-    <div class="h3">
-        общая стоимость: <span class="order_total_cost">{{ object.get_total_cost }}</span> руб
-    </div>
+    <!-- кеширование -->
+    {% with object_summary=object.get_summary %}
+        <div class="h4">
+            общее количество товаров: <span class="order_total_quantity">{{ object.get_total_quantity }}</span>
+        </div>
+        <div class="h3">
+            общая стоимость: <span class="order_total_cost">{{ object.get_total_cost }}</span> руб
+        </div>
+    {% endwith %}
 {% else %}
     <div class="h2">Новый заказ</div>
     <hr>
