@@ -35,7 +35,7 @@ else:
     DEBUG = False
 
 # DEBUG = True
-DEBUG = False  # При тестировании не забывать ставить False
+# DEBUG = False  # При тестировании не забывать ставить False
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'alexgeekshop.pythonanywhere.com']
 ALLOWED_HOSTS = ['*']
