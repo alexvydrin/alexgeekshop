@@ -29,12 +29,13 @@ with open('geekshop/env.json', 'r') as f:
     SECRET_KEY = ENV['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# if os.name == 'nt':
-#    DEBUG = True
-# else:
-#    DEBUG = False
+if os.name == 'nt':
+    DEBUG = True
+else:
+    DEBUG = False
 
-DEBUG = True
+# DEBUG = True
+# DEBUG = False  # При тестировании не забывать ставить False
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'alexgeekshop.pythonanywhere.com']
 ALLOWED_HOSTS = ['*']

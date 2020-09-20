@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.db.models import F
 from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.urls import reverse
 from django.template.loader import render_to_string
@@ -23,12 +24,20 @@ def basket(request):
 def basket_add(request, pk):
     if 'login' in request.META.get('HTTP_REFERER'):
         return HttpResponseRedirect(reverse('product', args=[pk]))
+
     product = get_object_or_404(Product, pk=pk)
     _basket = Basket.objects.filter(user=request.user, product=product).first()
+
     if not _basket:
         _basket = Basket(user=request.user, product=product)
-    _basket.quantity += 1
+        _basket.quantity = 1
+    else:
+        # _basket.quantity += 1
+        # перепишем через F-объект
+        _basket.quantity = F('quantity') + 1
+
     _basket.save()
+
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
