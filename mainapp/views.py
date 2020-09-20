@@ -104,6 +104,7 @@ def products(request, pk=None, page=1):
 def get_hot_product():
     # _products = Product.objects.filter(is_active=True, category__is_active=True)
     _products = get_products()
+    # TODO: Подумать как исправить ошибку если база данных пустая
     return random.sample(list(_products), 1)[0]
 
 

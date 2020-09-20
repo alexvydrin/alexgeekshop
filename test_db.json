@@ -1,0 +1,693 @@
+[
+  {
+    "model": "mainapp.productcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Серия Орион",
+      "description": "Столы серии Орион",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Прочие изделия",
+      "description": "Прочие столы",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 3,
+    "fields": {
+      "name": "ftgasfase114",
+      "description": "asdfasfae114",
+      "is_active": false
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 4,
+    "fields": {
+      "name": "q1",
+      "description": "w1e",
+      "is_active": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Стол письменный Орион",
+      "image": "products_images/big/table_orion_big.jpg",
+      "image_small": "products_images/small/table_orion_small.jpg",
+      "short_desc": "Удобный стол для офиса",
+      "description": "Корпус изготавливается из ЛДСП 16 мм. ДВПО белого цвета. Кромление в цвет корпуса, столешница в кромке ПВХ 2,0 мм. Направляющие роликовые, ручки пластик, 128 мм., серебро. Характеристики товара: ШИРИНА: 1220 ВЫСОТА: 750 ГЛУБИНА: 650",
+      "price": "990.00",
+      "quantity": 29,
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Стол письменный Орион-2",
+      "image": "products_images/big/table_orion_2_big.jpg",
+      "image_small": "products_images/small/table_orion_2_small.jpg",
+      "short_desc": "Отличный стол для работы",
+      "description": "Корпус и фасады изготавливаются из ЛДСП 16 мм. ДВПО белого цвета. Столешница и корпус кромка ПВХ 2,0 мм., направляющие роликовые. Ручки 96 или 128 мм., металл., опора 30 мм., регулируемая, серебро. Характеристики товара: ШИРИНА: 1300 ВЫСОТА: 750 ГЛУБИНА: 650",
+      "price": "1980.00",
+      "quantity": 6,
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 3,
+    "fields": {
+      "category": 2,
+      "name": "Стол письменный с ящиками №3",
+      "image": "products_images/big/table_3_big.jpg",
+      "image_small": "products_images/small/table_3_small.jpg",
+      "short_desc": "Удобный стол для учёбы",
+      "description": "Корпус изготавливается из ЛДСП 16 мм.\nДВПО белого цвета.\nКромление в цвет корпуса, столешница в кромке ПВХ 2,0 мм.\nНаправляющие роликовые, ручки пластик, 128 мм.\nХарактеристики товара\nШИРИНА: 1200\nВЫСОТА: 750\nГЛУБИНА: 600",
+      "price": "3000.00",
+      "quantity": 26,
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Стол письменный с ящиками №2",
+      "image": "products_images/big/table_2_big.jpg",
+      "image_small": "products_images/small/table_2_small.jpg",
+      "short_desc": "Очень удобный стол для учёбы",
+      "description": "Корпус изготавливается из ЛДСП 16 мм.\r\nДВПО белого цвета.\r\nКромление в цвет корпуса, столешница в кромке ПВХ 2,0 мм.\r\nНаправляющие роликовые, ручки пластик, 128 мм.\r\nХарактеристики товара\r\nШИРИНА: 1200\r\nВЫСОТА: 750\r\nГЛУБИНА: 600",
+      "price": "4000.00",
+      "quantity": 37,
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 5,
+    "fields": {
+      "category": 1,
+      "name": "test orion",
+      "image": "",
+      "image_small": "",
+      "short_desc": "rrr",
+      "description": "rrrrrtttt",
+      "price": "495.00",
+      "quantity": 5,
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "name": "test2",
+      "image": "products_images/big/image10.jpg",
+      "image_small": "products_images/small/basket.png",
+      "short_desc": "1",
+      "description": "2",
+      "price": "495.00",
+      "quantity": 5000,
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 7,
+    "fields": {
+      "category": 3,
+      "name": "test3",
+      "image": "",
+      "image_small": "",
+      "short_desc": "t3",
+      "description": "t333",
+      "price": "1000.00",
+      "quantity": 2000,
+      "is_active": false
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$b74Ju9aqvA7X$lzhrM8g8kcUnGNeNaKTjfRtYHYcxgt476iQFWhAjpiE=",
+      "last_login": "2020-09-13T13:46:01.416Z",
+      "is_superuser": true,
+      "username": "django",
+      "first_name": "Алекс",
+      "last_name": "",
+      "email": "django@geekshop.local",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-08-06T18:55:03.011Z",
+      "avatar": "",
+      "age": 32,
+      "activation_key": "",
+      "activation_key_expires": "2020-08-30T15:54:06.305Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$Leloi1axU45E$urJqTE9D58CX3g6o7SS/8rtAwhNFj3JXwjvepN1FpoA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "new",
+      "first_name": "F",
+      "last_name": "",
+      "email": "gm123@nn.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-06T20:29:11.289Z",
+      "avatar": "",
+      "age": 40,
+      "activation_key": "",
+      "activation_key_expires": "2020-08-30T15:54:06.305Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$CpfODXXPCUh8$bn0uoHVpy/e7Bp4FGZpEXm72ljaGdOCZJdrxZT5WQJc=",
+      "last_login": "2020-08-06T21:18:58.086Z",
+      "is_superuser": false,
+      "username": "test",
+      "first_name": "t",
+      "last_name": "",
+      "email": "tru@fs.urk",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-06T21:14:58.272Z",
+      "avatar": "users_avatars/left.png",
+      "age": 100,
+      "activation_key": "",
+      "activation_key_expires": "2020-08-30T15:54:06.305Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$nkdJDs1hzEl3$ETLsERjct6FJC1ooc/IsikcIrqYigkQZzRxKdt9jcRU=",
+      "last_login": "2020-08-22T15:51:08Z",
+      "is_superuser": false,
+      "username": "test1",
+      "first_name": "t",
+      "last_name": "",
+      "email": "er@mail.ru",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-08-15T20:39:23Z",
+      "avatar": "",
+      "age": 40,
+      "activation_key": "",
+      "activation_key_expires": "2020-08-30T15:54:06.305Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$cdzCpd3Qwv4d$4k5bmN++kdDOQ4wjcwltwZlxiz2vfUJXXMn11DwrQG8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "test3",
+      "first_name": "test3",
+      "last_name": "",
+      "email": "tes3t3@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-22T19:18:33Z",
+      "avatar": "",
+      "age": 44,
+      "activation_key": "",
+      "activation_key_expires": "2020-08-30T15:54:06.305Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$sAEguXW1ZCK0$sumVnPkYQxuXvBG/48mKPeqhfbFZc0VM/XErnLGbq3Q=",
+      "last_login": "2020-08-28T16:53:31Z",
+      "is_superuser": false,
+      "username": "test10",
+      "first_name": "t10",
+      "last_name": "",
+      "email": "test10@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-28T15:55:32Z",
+      "avatar": "users_avatars/image10.jpg",
+      "age": 50,
+      "activation_key": "e11a5150d3f342cf954810373ce8239a02c6ff27",
+      "activation_key_expires": "2020-08-30T15:54:32Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$smTHBAbI5aI4$pCNPfwkdzCEHTfsUsN+qkWNs8QHAzB6rXc6GilHYiwA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "test11",
+      "first_name": "t11",
+      "last_name": "",
+      "email": "test11@mail.ru",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-08-28T16:57:53Z",
+      "avatar": "",
+      "age": 45,
+      "activation_key": "2a34b27d18e68167a71ad8cd1e72f83f0740417f",
+      "activation_key_expires": "2020-08-30T16:53:01Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$owwH3nNvBB9G$fxu7e3bOCgUXFS9k8qSW/3cpMXAW5CtZl4JPI5MICow=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "test12",
+      "first_name": "t12",
+      "last_name": "",
+      "email": "test12@mail.ru",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-08-28T17:28:39Z",
+      "avatar": "",
+      "age": 45,
+      "activation_key": "479276b443c7f9e66f0a524d2fee32fdf20d6020",
+      "activation_key_expires": "2020-08-30T17:28:02Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$aYqq0R1Y2iht$lhXFp5b8bn6Zuh9Y+IYGyjgN9DF50Xq6QFNE9EUv63A=",
+      "last_login": "2020-08-28T17:55:58.934Z",
+      "is_superuser": false,
+      "username": "test13",
+      "first_name": "t13",
+      "last_name": "",
+      "email": "tapat13@mail.ru",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-08-28T17:55:38.457Z",
+      "avatar": "",
+      "age": 45,
+      "activation_key": "ba6a0cdcf69f8cc5cf36246a799f2b1eb24f1c7d",
+      "activation_key_expires": "2020-08-30T17:28:02.616Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$oH4xA4WIQe8k$peYzTlMoCS3rIHFhbuC0lE7CZsJo/g15b58xKcQE8EI=",
+      "last_login": "2020-08-29T10:24:57.140Z",
+      "is_superuser": false,
+      "username": "test15",
+      "first_name": "t15",
+      "last_name": "",
+      "email": "test15@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-29T10:22:12.757Z",
+      "avatar": "",
+      "age": 50,
+      "activation_key": "78db5cc4e8f14f80ad632b762426b2deb98bfb44",
+      "activation_key_expires": "2020-08-31T10:20:33.086Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$yC0Wh3Myth6h$cx6gR06gdA6qxfWntsucUR4Dgd7fX75G1FvIPHCl8JY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "test16",
+      "first_name": "t16",
+      "last_name": "",
+      "email": "test16@mail.ru",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-08-30T09:49:31.743Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "dccd56bb0a5ac7954bfe8cc81fc991e9bc9c18e8",
+      "activation_key_expires": "2020-09-01T09:48:49.809Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$Rz6WpKhYdGuq$heyqzgW2glPTsKdZig4PNrelC3m/T0qgvSs9NxFUoQI=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "test17",
+      "first_name": "t17",
+      "last_name": "",
+      "email": "test17@mail.ru",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-08-30T10:01:30.148Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "1854ca4801bc24fac6a58da9fe1ac4b14b5532b8",
+      "activation_key_expires": "2020-09-01T10:00:45.725Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$C06la9DWClPm$NtohBf//glIKNG1YpdphCooQ9bfqn7OcI3E/JIUP5g0=",
+      "last_login": "2020-08-30T10:11:05.775Z",
+      "is_superuser": false,
+      "username": "test18",
+      "first_name": "t18",
+      "last_name": "",
+      "email": "test18@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T10:07:52.977Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "86f57f0ad6b0b97b2757aa575bb03b06852658af",
+      "activation_key_expires": "2020-09-01T10:07:09.210Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$qa6thcrJCvj6$QPIJ1gUb+E13u8vc6ms/U1e+BE0Qf7/5rgii651heUY=",
+      "last_login": "2020-08-30T10:18:06.047Z",
+      "is_superuser": false,
+      "username": "test19",
+      "first_name": "t19",
+      "last_name": "",
+      "email": "test19@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T10:16:25.512Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "588cb58d49e124fc0a5f1f8b922fc85e87cd01b1",
+      "activation_key_expires": "2020-09-01T10:15:31.226Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 16,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$8D7c8B0xHioJ$bxGsW2PMTzQxw3vUzmT0Kpmizh5Irx5lBpbv47O1dz8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "test20",
+      "first_name": "t20",
+      "last_name": "",
+      "email": "test20@mail.ru",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-08-30T10:30:57.923Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "230976443d1b1d32552006150613047f4c0899f1",
+      "activation_key_expires": "2020-09-01T10:28:46.810Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$6rs6gG6aOeSU$cOKmsiyTe/+9Iyoor0LVz75pU2rNvkE/cJtKydLlLVo=",
+      "last_login": "2020-08-30T12:10:18.244Z",
+      "is_superuser": false,
+      "username": "test21",
+      "first_name": "t21",
+      "last_name": "",
+      "email": "test21@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T10:59:51.865Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "816d31c0b870113e0cc2e52b4d5883bf698f772d",
+      "activation_key_expires": "2020-09-01T10:52:59.133Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 18,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$Xs93oEr5dhQX$11Pg5fyE7NDSyTd25LMjzdi9UBJFaMD5bgwYr0uSTU8=",
+      "last_login": "2020-08-30T11:26:45.741Z",
+      "is_superuser": false,
+      "username": "test22",
+      "first_name": "t22",
+      "last_name": "",
+      "email": "test22@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T11:25:42.889Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "ad91d94e83c4c76e317a0e6368d416f71a4b0dc2",
+      "activation_key_expires": "2020-09-01T11:24:58.428Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$UhMNZKlKcyij$2bujeBcqaBnTJRj3YXC9HufnldFHJeRfgGcj95Cvjhk=",
+      "last_login": "2020-08-30T11:36:17.013Z",
+      "is_superuser": false,
+      "username": "test23",
+      "first_name": "t23",
+      "last_name": "",
+      "email": "test23@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T11:35:46.854Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "87a06fbbc570ad9b031c92bc5c5f958118c626b4",
+      "activation_key_expires": "2020-09-01T11:35:08.292Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 20,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$AuhhlybuWzXC$R2H/X9N/TNLQyAPOCyxJukzqm7JzYLUwCoRh2PGgwQ0=",
+      "last_login": "2020-08-30T11:38:38.044Z",
+      "is_superuser": false,
+      "username": "test24",
+      "first_name": "t24",
+      "last_name": "",
+      "email": "test24@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T11:38:17.904Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "6bfbfa1c768cea5fab668212880c09eafbdc9fbe",
+      "activation_key_expires": "2020-09-01T11:37:11.553Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 21,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$SAMaNfSrIifz$+t8C7qrV7rW14FoLS4Pt4eBbvkdSs7439mT6Tu5ArFE=",
+      "last_login": "2020-08-30T11:56:08.821Z",
+      "is_superuser": false,
+      "username": "test26",
+      "first_name": "t26",
+      "last_name": "",
+      "email": "test26@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T11:55:50.005Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "4fa86a1481d9770c8dd722f6bef6b088fc270382",
+      "activation_key_expires": "2020-09-01T11:55:08.490Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 22,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$yDXc3RD3GzV4$jnZV+qF6Y7Z8l9DwFbtSKMB+02Rsl/bevmNagYAdf/A=",
+      "last_login": "2020-08-30T17:42:34.364Z",
+      "is_superuser": false,
+      "username": "test27",
+      "first_name": "t27",
+      "last_name": "",
+      "email": "test27@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T16:54:53.560Z",
+      "avatar": "",
+      "age": 20,
+      "activation_key": "1c6e8a0e41c603d26dbdb29c99355d7d61ca2645",
+      "activation_key_expires": "2020-09-01T16:53:07.050Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 23,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$logGEXEIlC0O$l50V5TXMyfXysoz4JPGzVnUHrOqTYW2dLgjpkeHKIdE=",
+      "last_login": "2020-08-30T17:45:27.001Z",
+      "is_superuser": false,
+      "username": "test29",
+      "first_name": "t29",
+      "last_name": "",
+      "email": "test29@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-08-30T17:45:21.070Z",
+      "avatar": "",
+      "age": 20,
+      "activation_key": "e304356b78b6f0f2efa42c10e3041a2d3e00720a",
+      "activation_key_expires": "2020-09-01T17:41:35.442Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 25,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$hrgbnrf1pMw1$wXZlR5+zK1ZZ9Koc5PZ4d/fe193iNM3XXPCaQqLbG/Q=",
+      "last_login": "2020-09-09T07:28:22.925Z",
+      "is_superuser": false,
+      "username": "test30",
+      "first_name": "t30",
+      "last_name": "",
+      "email": "test30@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-09T07:27:49.757Z",
+      "avatar": "",
+      "age": 20,
+      "activation_key": "5b2047596266833ee7ae200265b1f2ae7fa352d6",
+      "activation_key_expires": "2020-09-09T07:27:49.954Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 26,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$h0mZsnRRtwN4$17MkB9xh/ynQbYHRAzXB1gBC97aGtH5+RsFfZBSnXNU=",
+      "last_login": "2020-09-09T07:46:37.349Z",
+      "is_superuser": false,
+      "username": "test30_1",
+      "first_name": "t30_1",
+      "last_name": "",
+      "email": "test30_1@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-09T07:46:26.268Z",
+      "avatar": "",
+      "age": 23,
+      "activation_key": "3de56dec8b6dd4c7b6df49eee1cd83233d24527e",
+      "activation_key_expires": "2020-09-09T07:46:26.433Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 27,
+    "fields": {
+      "password": "!dbmavic7AKZBjQn58bQ0zEbvtGXFITANpqn2hZW0",
+      "last_login": "2020-09-09T08:02:49.385Z",
+      "is_superuser": false,
+      "username": "id4363132",
+      "first_name": "Алексей",
+      "last_name": "Выдрин",
+      "email": "tapat@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-09T08:02:23.434Z",
+      "avatar": "",
+      "age": 18,
+      "activation_key": "",
+      "activation_key_expires": "2020-09-09T08:02:23.435Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
